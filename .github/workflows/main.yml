@@ -1,4 +1,4 @@
-name: Reusable workflow to run python tests
+name: Reusable workflow to run python tests.
 
 on:
   workflow_call:
