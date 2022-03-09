@@ -10,8 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install bandit black codespell flake8 isort mypy pytest pyupgrade safety
-      - run: bandit -r . || true
-      - run: black --check . --exclude /migrations
+      - run: bandit -r . || true 
+      - run: black --check .
       - run: codespell --quiet-level=2  # --ignore-words-list="" --skip=""
       - run: flake8 . --count --ignore=W503,E501 --max-line-length=91 --show-source --statistics 
     
