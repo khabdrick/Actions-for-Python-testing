@@ -5,8 +5,13 @@ This is a reusable workflow that is used to test(unit, lint) Python application.
 - Create a directory named _.github/workflows_, then create a YAML file with your preferred name in the directory you just created.
 - Paste the following in the file you just created.
 ```yaml
+on: [pull_request, push]
+  
 jobs:
-  build:
-  uses:
-    khabdrick/Actions-for-Python-testing/.github/workflows/name_of_file.yml@1
+  run_ubuntu:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+  run_test:
+      uses: khabdrick/Actions-for-Python-testing/.github/workflows/main.yml@main
 ```
